@@ -1,0 +1,74 @@
+== Introduction == 
+
+The Middler is a Man in the Middle tool to demonstrate protocol middling
+attacks. Led by Jay Beale, the project involves a team of authors including
+InGuardians agents Justin Searle and Matt Carpenter, as well as Open Source
+non-InGuardians employees Tim Craig and Brandon Edwards.  The Middler is 
+intended to man in the middle, or "middle" for short, every protocol for which
+we can create code.
+
+In our first alpha release, we released an HTTP proxy built by Matt and Jay, 
+with introductory plug-ins by Justin and InGuardians agent Tom Liston.  The
+HTTP proxy and plugins have moved into full production state, with a new 
+protocol, Voice over IP's own SIP, in development.
+
+The Middler runs on Linux and OS X and requires Python 2.6.x.
+
+
+== Plug-Ins ==
+
+Justin and Tom's first plug-ins were very cool:
+
+    * plugin-beef.py - inject the Browser Exploitation Framework (BeEF) into any
+      HTTP requests originating on the local LAN
+
+    * plugin-metasploit.py - inject an IFRAME into cleartext (HTTP) requests
+      that loads Metasploit browser exploits
+
+    * plugin-keylogger.py - inject a JavaScript? onKeyPress event handler to
+      cleartext forms that get submitted via HTTPS, forcing the browser to send
+      the password character-by-character to the attacker's server, before the
+      form is submitted.
+
+Justin has refinements to these on the way, as well as a batch of so-far
+unreleased modules.
+
+The author team has done a tremendous amount of research, design and pseudo-code
+work, fleshing out attacks on web-based e-mail systems and social networking
+sites. We'll be standing up an external Wiki soon to share more of these ideas,
+but you can get early details from our slides from Jay and Justin's talks at Def
+Con.
+
+== Dependencies: ==
+
+The Middler depends on the following Python modules:
+
+    * scapy
+    * libpcap
+    * readline
+    * libdnet (libdumbnet on some systems where dnet means DECnet.)
+    * python-netfilter 
+
+Please see the wiki for platform-specific installation instructions.
+
+== People: ==
+
+Justin Searle - Co-Author
+Matt Carpenter - Co-Author
+Tom Liston - Emeritus Co-author
+Tim Craig - Co-author, fixing HTTP issues
+Brandon Edwards - Co-Author, focus on DHCP Poisoning and Installation/Update
+Rob Fuller / Mubix - Beta Tester 
+Matt Burton - Beta Tester
+Lance James - Beta Tester
+Nick DePetrillo - Beta Tester
+Brian Aker / Krow - Beta Tester
+Jay Beale - Co-Author and Project Lead
+
+
+=== Special Pre-Announcement: ===
+
+Justin Searle offers a class on Man in the Middle Attacks for Penetration Testers
+class, where he teaches people how to both use and add onto the Middler and other
+MitM tools.  We're sure you'll find the class very useful.
+
